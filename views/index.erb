@@ -1,22 +1,14 @@
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Real Asked</title>
-  </head>
-  <body>
-    <h1>질문하기</h1>
-    <form action="/ask">
-      이름 :
-      <select name="name">
-        <option value="익명">익명</option>
-        <option value="<%= session[:email] %>">내 아이디</option>
-      </select> <br>
-      질문 : <input type="text" name="question">
-      <input type="submit">
-    </form>
-    <% @questions.each do |q| %>
-      <p>질문자 : <%= q.name %><p>
-      <p>질문 : <%= q.content %><p>
-    <% end %>
-  </body>
-</html>
+<h1>질문하기</h1>
+  <form action="/ask">
+    이름 :
+    <select name="name">
+      <option value="익명">익명</option>
+      <option value="<%= session[:email] %>">내 아이디</option>
+    </select> <br>
+    질문 : <input type="text" name="question">
+    <input type="submit">
+  </form>
+  <% @questions.each do |q| %>
+    <p>질문자 : <%= q.name %><p>
+    <p>질문 : <%= q.content %><p>
+  <% end %>
